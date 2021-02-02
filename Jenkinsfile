@@ -11,7 +11,9 @@ pipeline {
     stages {
     
     	stage('SCM Checkout') {
-    		git 'https://github.com/slibonati/spring-rest'
+	    	steps {
+	    		checkout url: 'https://github.com/slibonati/spring-rest'
+	    	}
   }
 /*
         stage('stage 1') {
