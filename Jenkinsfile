@@ -2,17 +2,13 @@ pipeline {
     options {
         timeout(time: 30, unit: 'MINUTES')
     }
-    agent {
-      node {
-	label 'master'
-      }
-    }
+    
+    agent any
 
     stages {
-    
-    	stage('SCM Checkout') {
+    	stage('checkout') {
 	    	steps {
-	    		checkout url: 'https://github.com/slibonati/spring-rest'
+	    		git url: 'https://github.com/slibonati/spring-rest'
 	    	}
   		}
 	}
